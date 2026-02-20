@@ -23,7 +23,7 @@ DC_NAMESPACE = "http://purl.org/dc/elements/1.1/"
 WP_NAMESPACE = "http://wordpress.org/export/1.2/"
 
 
-def parse(path: str | Path) -> dict:
+def parse(path: str | Path) -> dict[str, Any]:
     """
     Parses xml and returns a formatted dict.
 

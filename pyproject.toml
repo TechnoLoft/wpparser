@@ -49,10 +49,23 @@ select = [
 [tool.ruff.lint.isort]
 known-third-party = ["phpserialize"]
 
-[tool.ty.environment]
-python-version = "3.14"
+[tool.mypy]
+python_version = "3.14"
+strict = true
+warn_unused_configs = true
 
-[tool.ty.rules]
-possibly-unresolved-reference = "warn"
-unresolved-reference = "error"
-unresolved-import = "warn"
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_unreachable = true
+
+show_error_codes = true
+pretty = true
+
+[[tool.mypy.overrides]]
+module = ["phpserialize"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["tests.*"]
+disallow_untyped_defs = false
