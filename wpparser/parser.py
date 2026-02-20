@@ -5,6 +5,8 @@ wpparser
 Load and parse the wp export file into a readable dictionary.
 """
 
+from __future__ import annotations
+
 import logging
 import xml.etree.ElementTree as ET
 from io import BytesIO
